@@ -1,0 +1,128 @@
+/*     
+    Author     : Luis Gomes
+*/
+
+body {
+    height: 100%;
+    background: #F1F2F6;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+#wrapper {
+    padding-left: 250px;
+}
+
+.side-nav {
+    margin-left: -250px;
+    left: 250px;
+    width: 250px;
+    position: fixed;
+    top: 71px;
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    background-color: #272A33;
+    overflow-y: auto;
+}
+
+.side-nav > li > a {
+    width: 250px;
+    color: #ffffff !important;
+}
+
+.side-nav > li > a:hover, .side-nav > li > a.active {
+    color: #ffffff !important;
+    background-color: #18191F !important;
+}
+.side-nav > li > a > i{
+    margin: -12px -15px;
+    line-height: 44px;
+    width: 41px;
+    float: left;
+    margin-right: 10px;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;    
+}    
+
+
+.navbar-custom {
+    background-color: #4FC1E9;
+    border-color: #4FC1E9;
+    min-height: 71px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 300;
+    color: #7F8C8D;
+}
+
+#content {
+    padding: 15px 25px;
+    margin-top: 60px;
+}
+
+.container-erro {
+    color: #c9302c;
+}
+
+.logo {
+    color: #fff;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+.navbar-header {
+    width: 100%;
+}
+
+#container-login {
+    max-width: 400px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 40px;
+}
+
+#btn-login {
+    margin: auto;
+    display: block;
+    background: #4FC1E9;
+    border-color: #4FC1E9;
+}
+
+#logo-container-login .logo {
+    text-align: center;
+    margin: 10px auto 20px;
+}
+
+.list {
+    background: #fff;
+    padding: 15px;
+}
+
+.btn-action-table {
+    font-size: 25px;
+    margin: 0px 10px;
+}
+
+.btn-action-table:hover {
+    border: 0;
+}
+
+#info-usuario {
+    float: right;
+    color: #fff;
+    position: relative;
+    top: 30px;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+#btn-sair {
+    color: #272A33;
+    text-decoration: underline;
+    margin-left: 20px;
+}
