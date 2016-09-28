@@ -6,17 +6,17 @@
 <html>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet" type="text/css" />
-<title>Sisfiscon</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>          
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>           
+<script src="${pageContext.request.contextPath}/resources/js/main.js" type="text/javascript" ></script>
+<title>Sisfiscon</title>
 </head>
 <body>
 	<h2>Sisfiscon</h2>
 	<p>
-		<a href="/Rafael_Viana_AV1/novo-fornecedor">Novo Fornecedores</a> 
+		<a href="${pageContext.request.contextPath}/novo-fornecedor">Novo Fornecedores</a> 
                 
 	</p>
 	<div id="content" class="col-lg-8">

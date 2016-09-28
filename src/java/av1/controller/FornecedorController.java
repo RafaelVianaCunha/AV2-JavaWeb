@@ -36,18 +36,18 @@ public class FornecedorController {
 		return mv;
 	} 
         
-//        @RequestMapping("novo-fornecedor")
-//	public String novoPedido() {
+        @RequestMapping("novo-fornecedor")
+	public String novoPedido() {
 //              model.addAttribute("fornecedor", new Fornecedor()); 
-//		return "formulario-fornecedor";
-//	}
-        
-        @RequestMapping(value = "novo-fornecedor", method = RequestMethod.GET)
-	public ModelAndView initCadastrarFornecedor() {
-                ModelAndView mv = new ModelAndView("formulario-fornecedor");
-		mv.addObject("fornecedor", new Fornecedor());
-		return mv;
+		return "formulario-fornecedor";
 	}
+        
+//        @RequestMapping(value = "novo-fornecedor", method = RequestMethod.GET)
+//	public ModelAndView initCadastrarFornecedor() {
+//                ModelAndView mv = new ModelAndView("formulario-fornecedor");
+//		mv.addObject("fornecedor", new Fornecedor());
+//		return mv;
+//	}
     
      @RequestMapping("/")
         public String redirect() {

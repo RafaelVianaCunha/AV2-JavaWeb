@@ -5,6 +5,7 @@
  */
 package av1.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  *
@@ -25,12 +27,32 @@ public class Endereco {
     @Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "endereco_seq")
     private long id;
+    
+    @Column(nullable=false, length=100)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String logradouro;
+    
+    @Column(nullable=false, length=50)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String numero;
+    
+    @Column(nullable=false, length=100)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String bairro;
+    
+    @Column(nullable=true, length=50)
     private String complemento;
+    
+    @Column(nullable=false, length=200)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String municipio;
+    
+    @Column(nullable=false, length=8)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String cep;
+    
+    @Column(nullable=false, length=8)
+    @NotEmpty(message = "O Campo é Obrigatório.")
     private String uf;
 //    @MapsId
 //    @OneToOne

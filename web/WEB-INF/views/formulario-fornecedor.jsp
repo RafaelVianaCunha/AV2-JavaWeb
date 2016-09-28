@@ -30,7 +30,7 @@
                 <div>
                     
                     <label for="CNPJ">CNPJ</label> <input class="form-control" type="text"
-                                                          name="CNPJ" placeholder="CNPJ" maxlength="14" id="cnpj" required/>
+                                                          name="CNPJ" placeholder="CNPJ" maxlength="18" id="cnpj" required  pattern="\d{2}.?\d{3}.?\d{3}/?\d{4}-?\d{2}"/>
                 </div>                
                 <div>
                     <form:errors path="fornecedor.CNPJ" cssStyle="color:red"/>
@@ -47,7 +47,7 @@
                 <div>
                    
                     <label for="inscricaoMunicipal">Inscricao Municipal</label> <input class="form-control" type="text"
-                                                           name="inscricaoMunicipal" placeholder="Inscricao Municipal" maxlength="8" id="inscricaoMunicipal"/>
+                                                                    name="inscricaoMunicipal" placeholder="Inscricao Municipal" maxlength="11" id="inscricaoMunicipal" pattern="\d{1}.?\d{3}.?\d{3}-?\d{1}"/>
                 </div>                
                 <div>
                     <form:errors path="fornecedor.inscricaoMunicipal" cssStyle="color:red"/>
@@ -80,7 +80,7 @@
                         </div>   
                         <div>
                             <label for="cep">CEP</label> <input class="form-control" type="text"
-                                                                   name="endereco.cep" placeholder="CEP" maxlength="9" id="cep" required/>
+                                                                name="endereco.cep" placeholder="CEP" maxlength="9" id="cep" required pattern="\d{5}-\d{3}"/>
                         </div>  
                         <div>
                             <label for="municipio">Município</label> <input class="form-control" type="text"
