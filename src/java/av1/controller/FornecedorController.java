@@ -57,7 +57,7 @@ public class FornecedorController {
         @RequestMapping(value="salvar-fornecedor", method=RequestMethod.POST)
 	public String salvar(@Valid  @ModelAttribute("fornecedor") Fornecedor fornecedor, BindingResult result) {
             if (result.hasFieldErrors()) {
-                    return "formulario";
+                    return "forward:formulario-fornecedor";
             }
             FornecedorDAOImpl dao = new FornecedorDAOImpl();
             try {

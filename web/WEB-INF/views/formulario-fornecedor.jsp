@@ -89,7 +89,7 @@
                     
                         <div>
                             <label for="uf">UF</label>
-                            <select name="uf" id="uf" name="endereco.uf" required>                               
+                            <select id="uf" name="endereco.uf" required>    
                                 <option value="AC">AC</option>
                                 <option value="AL">AL</option>
                                 <option value="AM">AM</option>

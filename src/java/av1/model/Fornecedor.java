@@ -46,7 +46,7 @@ public class Fornecedor {
     @NotEmpty(message = "O Campo é Obrigatório.")
     private String razaoSocial;
     
-    @Column(length=12)
+    @Column(length=11)
     private String inscricaoMunicipal;
     
     @NotNull(message = "O Campo é Obrigatório.")
@@ -69,6 +69,9 @@ public class Fornecedor {
     public void setId(long fornecedorId) {
             this.id = fornecedorId;
     }
+    
+    
+    
     public String getCNPJ() {
             return CNPJ;
     }
