@@ -54,6 +54,7 @@ public class ProcessoController {
                     fornecedor = dao.getById(Long.parseLong(id));
                     mv = new ModelAndView("formulario-processo-fornecedor");
                     processo.setFornecedor(fornecedor);
+                    processo.setIdFornecedor(id);
                     mv.addObject("processo", processo);
                 }else{
                     mv = new ModelAndView("formulario-processo");
@@ -66,7 +67,12 @@ public class ProcessoController {
             if (result.hasFieldErrors()) {
                     return "forward:formulario-processo-fornecedor";
             }
+            
             ProcessoDAOImpl dao = new ProcessoDAOImpl();
+            FornecedorDAOImpl fornecedorDao = new FornecedorDAOImpl();
+            Fornecedor fornecedor = fornecedorDao.getById(Long.parseLong(processo.getIdFornecedor()));
+            processo.setFornecedor(fornecedor);
+            processo.gerarNumeroProcesso();
             try {
                     dao.salvar(processo);
             } catch (Exception e) {

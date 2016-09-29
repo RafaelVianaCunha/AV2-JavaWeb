@@ -9,6 +9,7 @@ package av1.model;
 import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -35,7 +36,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @SequenceGenerator(name="PROCESSO_SEQ", sequenceName="PROCESSO_SEQ", allocationSize=1, initialValue=0)
 public class Processo implements Serializable{
     @Id
-     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROCESSO_SEQ")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROCESSO_SEQ")
     private long id;
     
     @Column(nullable=false, length=1000)
@@ -57,6 +58,8 @@ public class Processo implements Serializable{
     private Fornecedor fornecedor;
 
     private String numeroProcesso;
+    
+    private String idFornecedor;
 
     public long getId() {
             return id;
@@ -100,12 +103,32 @@ public class Processo implements Serializable{
             this.fornecedor = fornecedor;
     }
 
+      public String getIdFornecedor() {
+            return idFornecedor;
+    }
+
+    public void setIdFornecedor(String id_fornecedor) {
+            this.idFornecedor = id_fornecedor;
+    }   
+        
+        
     public String getNumeroProcesso() {
             return numeroProcesso;
     }
 
     public void setNumeroProcesso(String numeroProcesso) {
             this.numeroProcesso = numeroProcesso;
+    }
+     
+    public void gerarNumeroProcesso(){
+        
+            Calendar calendario = Calendar.getInstance();
+            this.numeroProcesso = calendario.get(Calendar.YEAR) + "" + calendario.get(Calendar.MONTH + 1) + 
+                    "" + calendario.get(Calendar.DATE) + "" + calendario.get(Calendar.HOUR_OF_DAY) + "" + 
+                    calendario.get(Calendar.MINUTE) + "" + calendario.get(Calendar.SECOND) + "" + this.fornecedor.getCNPJ();
+            
+            this.numeroProcesso = this.numeroProcesso.replaceAll("[^a-zZ-Z1-9 ]", "");
+                
     }
 
     

@@ -32,8 +32,7 @@
                       <legend>Fornecedor</legend>
                 <div>
                     <label >CNPJ: ${processo.fornecedor.CNPJ}</label> </br>
-                    <label >Razao Social: ${processo.fornecedor.razaoSocial}</label> </br>
-                    <label >Endereco: ${processo.fornecedor.endereco.cep}</label> </br>
+                    <label >Razao Social: ${processo.fornecedor.razaoSocial}</label> </br>                   
                     <label >Inscricao Municipal: ${processo.fornecedor.inscricaoMunicipal}</label> </br>
                 </div>
                    </fieldset>
@@ -69,12 +68,15 @@
                 </div>
                 
                 <div>
-                    <label for="fiscalResponsavel">Fiscal Responsavel</label> <input class="form-control" type="text" value="<c:out value="${processo.fiscalResponsavel}" />"
+                    <label for="fiscalResponsavel">Fiscal Responsavel</label> <input class="form-control" type="text" value="<c:out value="${processo.fiscalResponsavel}" />" 
                                                            name="fiscalResponsavel" placeholder="Fiscal Responsavel" maxlength="100" required id="fiscalResponsavel"/>
                 </div>                
                 <div>
                     <form:errors path="fiscalResponsavel" cssStyle="color:red"/>
                 </div>
+                
+                <input class="form-control" type="hidden" value="${processo.idFornecedor}"
+                                                           name="idFornecedor" placeholder="Fiscal Responsavel" maxlength="100" required id="idFornecedor"/>
                 
                 </fieldset>        
                 <div>

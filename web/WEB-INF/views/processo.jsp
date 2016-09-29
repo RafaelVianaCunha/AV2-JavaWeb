@@ -27,11 +27,11 @@
 		<table class="table table_list">
 			<thead>
 				<tr>
-					<th>numeroProcesso</th>
+					<th>Numero Processo</th>
 					<th>Razão Socia / CNPJ do Fornecedor</th>
 					<th>Fiscal Responsável</th>
 					<th>Data Relatorio</th>
-                                        <th>Receita Bruta</th>
+                                        
                                         <th colspan="2">Ações</th>
 				</tr>
 			</thead>
@@ -42,7 +42,7 @@
 						<td><c:out value="${processo.fornecedor.razaoSocial} / ${processo.fornecedor.CNPJ} " /></td>
 						<td><c:out value="${processo.fiscalResponsavel}" /></td>
 						<td><c:out value="${processo.dateRelatorio}" /></td>
-						<td><c:out value="${processo.receitaBruta}" /></td>
+						
                                                 <td><a href="${pageContext.request.contextPath}/editar-processo?id=<c:out value="${processo.id }"/>">Editar</a></td>
 						<td><a href="${pageContext.request.contextPath}/excluir-processo?id=<c:out value="${processo.id}"/>">Excluir</a></td> 						
 					</tr>
