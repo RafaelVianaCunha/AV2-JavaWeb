@@ -8,12 +8,10 @@ package av1.dao;
 import av1.model.Fornecedor;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
-
 
 /**
  *
@@ -66,7 +64,6 @@ public class FornecedorDAOImpl {
         }
     }
 
-   
     public Fornecedor detalhar(Long id) {
     	Fornecedor fornecedor = null;
         try {
@@ -83,6 +80,36 @@ public class FornecedorDAOImpl {
         fornecedor = em.find(Fornecedor.class, id);
         return fornecedor;
     }
+      
+    public String getByCNPJ(String CNPJ) {
+        Fornecedor fornecedor = new Fornecedor();
+        Object o ;
+        Query query = em.createQuery("SELECT f.id FROM Fornecedor f where f.CNPJ = :cnpj");
+        query.setParameter("cnpj", CNPJ);
+        String id = query.getSingleResult().toString();
+        
+        //fornecedor.setId(s);
+//         List<Fornecedor> fornecedores = query.getResultList();
+//         if(!fornecedores.isEmpty()){     
+//            o = fornecedores.get(0);
+//             System.out.println(o.toString());
+//            fornecedor = (Fornecedor)o;
+////         }
+//         
+////        Query query = em.createQuery("SELECT f FROM Fornecedor f where f.CNPJ = ?");
+////        query.setParameter(1, CNPJ);
+////         return  (Fornecedor) query.getSingleResult();
+////       return (Fornecedor) em.createQuery("from Fornecedor where CNPJ=:cnpjFornecedor").setParameter("cnpjFornecedor", CNPJ);
+//        System.out.println("av1.dao.FornecedorDAOImpl.getByCNPJ()");
+//        return fornecedor;
+
+//                Query query = em.createQuery("SELECT f FROM Fornecedor f where f.CNPJ = :cnpj");
+//                query.setParameter("cnpj", CNPJ);
+//                fornecedor = (Fornecedor) query.getSingleResult();
+           
+	return id;
+     
+  }
 
     
     @SuppressWarnings("unchecked")
@@ -96,6 +123,10 @@ public class FornecedorDAOImpl {
             em.close();
         }       
         return fornecedores;
+    }
+
+    private Object getSession() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

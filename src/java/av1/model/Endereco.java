@@ -5,6 +5,7 @@
  */
 package av1.model;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @SequenceGenerator(name="endereco_seq", sequenceName="endereco_seq", 
         allocationSize= 1, initialValue = 1)
-public class Endereco {
+public class Endereco implements Serializable{
     @Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "endereco_seq")
     private long id;

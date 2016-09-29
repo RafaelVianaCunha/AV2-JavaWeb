@@ -33,9 +33,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 @SequenceGenerator(name="fornecedor_seq", sequenceName="fornecedor_seq", 
         allocationSize= 1, initialValue = 1)
-public class Fornecedor {
+public class Fornecedor implements Serializable{
     @Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "fornecedor_seq")
+
     private long id;
     
     @Column(nullable=false, length=18)
@@ -66,11 +67,9 @@ public class Fornecedor {
     public long getId() {
             return id;
     }
-    public void setId(long fornecedorId) {
-            this.id = fornecedorId;
+    public void setId(long id) {
+            this.id = id;
     }
-    
-    
     
     public String getCNPJ() {
             return CNPJ;

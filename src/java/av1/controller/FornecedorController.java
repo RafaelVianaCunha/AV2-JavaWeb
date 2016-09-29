@@ -37,7 +37,7 @@ public class FornecedorController {
 	} 
         
         @RequestMapping("novo-fornecedor")
-	public String novoPedido() {
+	public String novoFornecedor() {
 //              model.addAttribute("fornecedor", new Fornecedor()); 
 		return "formulario-fornecedor";
 	}
@@ -49,10 +49,10 @@ public class FornecedorController {
 //		return mv;
 //	}
     
-     @RequestMapping("/")
-        public String redirect() {
-            return "forward:listar-fornecedor";
-        }
+//     @RequestMapping("/")
+//        public String redirect() {
+//            return "forward:listar-fornecedor";
+//        }
         
         @RequestMapping(value="salvar-fornecedor", method=RequestMethod.POST)
 	public String salvar(@Valid  @ModelAttribute("fornecedor") Fornecedor fornecedor, BindingResult result) {

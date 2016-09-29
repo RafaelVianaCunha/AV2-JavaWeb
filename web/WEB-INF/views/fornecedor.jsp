@@ -15,8 +15,9 @@
 </head>
 <body>
 	<h2>Sisfiscon</h2>
+        <p><a href="${pageContext.request.contextPath}/">Pagina inicial</a></p>
 	<p>
-		<a href="${pageContext.request.contextPath}/novo-fornecedor">Novo Fornecedores</a> 
+		<a href="${pageContext.request.contextPath}/novo-fornecedor">Novo Fornecedor</a> 
                 
 	</p>
 	<div id="content" class="col-lg-8">

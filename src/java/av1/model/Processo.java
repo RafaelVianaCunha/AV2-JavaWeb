@@ -6,6 +6,9 @@
 package av1.model;
 
 
+import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,7 +33,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name="processo")
 @SequenceGenerator(name="PROCESSO_SEQ", sequenceName="PROCESSO_SEQ", allocationSize=1, initialValue=0)
-public class Processo {
+public class Processo implements Serializable{
     @Id
      @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PROCESSO_SEQ")
     private long id;
@@ -77,6 +80,8 @@ public class Processo {
 
     public void setDateRelatorio(Date dateRelatorio) {
             this.dateRelatorio = dateRelatorio;
+//            DateFormat formatter = new SimpleDateFormat("MM/dd/yy");
+//            this.dateRelatorio = (Date)formatter.parse(dateRelatorio);
     }
 
     public String getFiscalResponsavel() {
